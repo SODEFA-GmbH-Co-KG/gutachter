@@ -35,11 +35,9 @@ export function buildUserPrompt(checkboxData: GenerateFormData): string {
 
   for (const [categoryKey, category] of Object.entries(GENERATION_CATEGORIES)) {
     lines.push(`### ${category.label}`)
-    const categoryData =
-      checkboxData[categoryKey as keyof GenerateFormData]
+    const categoryData = checkboxData[categoryKey as keyof GenerateFormData]
     for (const [groupKey, group] of Object.entries(category.groups)) {
-      const value =
-        categoryData[groupKey as keyof typeof categoryData]
+      const value = categoryData[groupKey as keyof typeof categoryData]
       if (value) {
         lines.push(`- ${group.label}: ${value}`)
       }

@@ -2,8 +2,7 @@ export const t = {
   landing: {
     title: (
       <>
-        Immobiliengutachten.{' '}
-        <b className="text-primary">Per KI generiert.</b>
+        Immobiliengutachten. <b className="text-primary">Per KI generiert.</b>
       </>
     ),
   },
@@ -316,6 +315,7 @@ export const t = {
     emails: 'E-Mails',
     dashboard: 'Dashboard',
     generate: 'Gutachten generieren',
+    generationHistory: 'Gutachtenverlauf',
   },
   emailsLog: {
     title: 'E-Mails',

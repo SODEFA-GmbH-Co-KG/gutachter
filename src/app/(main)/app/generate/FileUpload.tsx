@@ -30,7 +30,9 @@ export function FileUpload({
 
       for (const file of incoming) {
         if (file.size > FILE_CONSTRAINTS.maxFileSizeBytes) {
-          setError(`${file.name} ist groesser als ${FILE_CONSTRAINTS.maxFileSizeMB} MB.`)
+          setError(
+            `${file.name} ist groesser als ${FILE_CONSTRAINTS.maxFileSizeMB} MB.`,
+          )
           return
         }
         if (

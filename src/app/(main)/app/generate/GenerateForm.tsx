@@ -30,7 +30,9 @@ export function GenerateForm() {
   const [isStreaming, setIsStreaming] = useState(false)
 
   const onSubmit = useCallback(
-    async (data: typeof form extends { getValues: () => infer T } ? T : never) => {
+    async (
+      data: typeof form extends { getValues: () => infer T } ? T : never,
+    ) => {
       setIsStreaming(true)
       setResultText('')
 
@@ -48,9 +50,7 @@ export function GenerateForm() {
 
         if (!response.ok) {
           const err = await response.json().catch(() => null)
-          throw new Error(
-            err?.error || 'Die Generierung ist fehlgeschlagen.',
-          )
+          throw new Error(err?.error || 'Die Generierung ist fehlgeschlagen.')
         }
 
         const contentType = response.headers.get('content-type') || ''

@@ -46,11 +46,9 @@ export function CheckboxMatrix() {
                     value={currentValue}
                     onValueChange={(val: string) => {
                       if (val) {
-                        setValue(
-                          fieldPath as 'lage.makrolage',
-                          val as never,
-                          { shouldValidate: true },
-                        )
+                        setValue(fieldPath as 'lage.makrolage', val as never, {
+                          shouldValidate: true,
+                        })
                       }
                     }}
                     className="flex flex-wrap gap-1.5"

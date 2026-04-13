@@ -39,7 +39,9 @@ export async function RootLayout({
   const localeResolved = locale ?? (await getMyLocale())
   return (
     <html suppressHydrationWarning lang={localeResolved}>
-      <body className={`${geist.className} bg-background min-h-[100svh] flex flex-col`}>
+      <body
+        className={`${geist.className} bg-background min-h-[100svh] flex flex-col`}
+      >
         <LocaleProvider value={localeResolved}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <SessionProvider>{children}</SessionProvider>

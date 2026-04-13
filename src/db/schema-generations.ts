@@ -31,9 +31,7 @@ export const generations = pgTable(
     durationMs: integer('duration_ms'),
     errorText: text('error_text'),
   },
-  (t) => [
-    index('generation_userId_createdAt_idx').on(t.userId, t.createdAt),
-  ],
+  (t) => [index('generation_userId_createdAt_idx').on(t.userId, t.createdAt)],
 )
 
 export const generationsRelations = relations(generations, ({ one }) => ({

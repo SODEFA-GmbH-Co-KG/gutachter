@@ -35,10 +35,7 @@ export async function POST(req: NextRequest) {
   const formData = await req.formData()
   const checkboxDataRaw = formData.get('checkboxData')
   if (typeof checkboxDataRaw !== 'string') {
-    return NextResponse.json(
-      { error: 'Missing checkboxData' },
-      { status: 400 },
-    )
+    return NextResponse.json({ error: 'Missing checkboxData' }, { status: 400 })
   }
 
   const checkboxParsed = GenerateFormSchema.safeParse(
@@ -134,10 +131,7 @@ export async function POST(req: NextRequest) {
       messages: [
         {
           role: 'user',
-          content: [
-            { type: 'text', text: userPrompt },
-            ...fileParts,
-          ],
+          content: [{ type: 'text', text: userPrompt }, ...fileParts],
         },
       ],
     })
@@ -179,9 +173,7 @@ export async function POST(req: NextRequest) {
           console.error('[Generate] Stream error:', errorMsg)
 
           // Try to send error to client
-          controller.enqueue(
-            encoder.encode(`\n\n---\n**Fehler:** ${errorMsg}`),
-          )
+          controller.enqueue(encoder.encode(`\n\n---\n**Fehler:** ${errorMsg}`))
           controller.close()
 
           await db
@@ -206,8 +198,7 @@ export async function POST(req: NextRequest) {
     })
   } catch (err) {
     // Synchronous error (e.g., invalid model, bad config)
-    const errorMsg =
-      err instanceof Error ? err.message : 'Generation failed'
+    const errorMsg = err instanceof Error ? err.message : 'Generation failed'
     console.error('[Generate] Sync error:', errorMsg)
 
     await db

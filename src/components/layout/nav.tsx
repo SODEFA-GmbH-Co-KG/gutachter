@@ -3,7 +3,15 @@ import { getIsLoggedIn } from '@/auth/getMyUser'
 import { getMyLocale } from '@/i18n/getMyLocale'
 import { getTranslations } from '@/i18n/getTranslations'
 import { Locale } from '@/i18n/locale'
-import { Building2, Clock, FileText, Home, Mail, Users } from 'lucide-react'
+import {
+  Building2,
+  Clock,
+  FileText,
+  History,
+  Home,
+  Mail,
+  Users,
+} from 'lucide-react'
 
 export type NavEntry = {
   name: string
@@ -75,6 +83,16 @@ export const getNavEntries = async ({
       icon: <FileText />,
       mainSidebarSection: 'main',
       showOnLanding: false,
+      exactMatch: true,
+    },
+    {
+      name: t.nav.generationHistory,
+      href: '/app/generate/history',
+      hidden: !isLoggedIn,
+      icon: <History />,
+      mainSidebarSection: 'main',
+      showOnLanding: false,
+      exactMatch: true,
     },
   ]
 

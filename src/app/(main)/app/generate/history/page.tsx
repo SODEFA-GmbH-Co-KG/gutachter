@@ -34,9 +34,7 @@ export default async function Page() {
       <TopHeader>Generierungsverlauf</TopHeader>
 
       {items.length === 0 ? (
-        <p className="text-muted-foreground">
-          Noch keine Gutachten generiert.
-        </p>
+        <p className="text-muted-foreground">Noch keine Gutachten generiert.</p>
       ) : (
         <div className="flex flex-col gap-4">
           {items.map((item) => (
