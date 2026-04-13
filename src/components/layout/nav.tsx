@@ -3,7 +3,7 @@ import { getIsLoggedIn } from '@/auth/getMyUser'
 import { getMyLocale } from '@/i18n/getMyLocale'
 import { getTranslations } from '@/i18n/getTranslations'
 import { Locale } from '@/i18n/locale'
-import { Building2, Clock, Home, Mail, Users } from 'lucide-react'
+import { Building2, Clock, FileText, Home, Mail, Users } from 'lucide-react'
 
 export type NavEntry = {
   name: string
@@ -65,6 +65,14 @@ export const getNavEntries = async ({
       href: '/app',
       hidden: !isLoggedIn,
       icon: <Building2 />,
+      mainSidebarSection: 'main',
+      showOnLanding: false,
+    },
+    {
+      name: t.nav.generate,
+      href: '/app/generate',
+      hidden: !isLoggedIn,
+      icon: <FileText />,
       mainSidebarSection: 'main',
       showOnLanding: false,
     },

@@ -1,4 +1,4 @@
-const DEFAULT_EMAIL_FROM = 'Party Starter <no-reply@party-starter.local>'
+const DEFAULT_EMAIL_FROM = 'GutachterKI <no-reply@gutachterki.de>'
 const DEFAULT_SMTP_URL = 'smtp://e2e:e2e@127.0.0.1:2525'
 
 const isTruthy = (value?: string) => {

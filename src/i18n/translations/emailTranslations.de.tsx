@@ -1,5 +1,4 @@
 import { BRAND } from '@/lib/starter.config'
-import { t as emailTranslationsEn } from './emailTranslations.en'
 
 export const t = {
   defaultTemplate: {
@@ -9,8 +8,6 @@ export const t = {
           Beste Grüße
           <br />
           Dein {BRAND.name} Team
-          <br />
-          🎉
         </>
       ),
     },
@@ -56,4 +53,4 @@ export const t = {
     verifyButton: '👉 Bestätigen 👈',
     fallback: 'oder kopiere und füge diese URL in deinen Browser ein',
   },
-} satisfies typeof emailTranslationsEn
+}

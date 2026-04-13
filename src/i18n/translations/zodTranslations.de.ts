@@ -1,7 +1,5 @@
 // copied and slightly modified from here: https://github.com/aiji42/zod-i18n/blob/main/packages/core/locales/de/zod.json
 
-import { zodErrorTranslationsEn } from './zodTranslations.en'
-
 export const zodErrorTranslationsDe = {
   errors: {
     invalid_type: (expected: string, received: string) =>
@@ -164,4 +162,6 @@ export const zodErrorTranslationsDe = {
       },
     },
   },
-} satisfies typeof zodErrorTranslationsEn
+}
+
+export type ZodErrorTranslations = typeof zodErrorTranslationsDe

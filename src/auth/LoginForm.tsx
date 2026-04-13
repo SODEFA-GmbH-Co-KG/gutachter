@@ -59,19 +59,7 @@ export const LoginForm = async ({ redirectUrl }: { redirectUrl?: string }) => {
             }
           })
         }}
-        alternatives={
-          <>
-            <ActionButton
-              variant={'outline'}
-              action={async () => {
-                'use server'
-                await signIn('discord')
-              }}
-            >
-              {t.auth.continueWithDiscord}
-            </ActionButton>
-          </>
-        }
+        alternatives={null}
       />
     </>
   )

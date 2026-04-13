@@ -7,29 +7,29 @@ export const ORGS = {
 } as const
 
 export const BRAND = {
-  name: 'Party Starter',
-  logoUrl: 'https://party-starter.vercel.app/logo.svg',
+  name: 'GutachterKI',
+  logoUrl: '/logo.svg',
   TextLogo: () => (
     <strong>
-      Party&nbsp;<span className="text-primary">Starter</span>
+      Gutachter<span className="text-primary">KI</span>
     </strong>
   ),
   metadata: {
     description:
-      'by Tristan Rechenberger, Tim Weiskopf, Sean Dieterle & Kevin Graf',
+      'KI-gestutzte Textgenerierung fur Immobiliengutachten. Aus Checkboxen, PDFs und Fotos werden professionelle Gutachtertexte.',
   },
   github: {
-    active: true,
-    url: 'https://github.com/rechenberger/party-starter',
+    active: false,
+    url: '',
   },
   colors: {
-    primary: '#79a913',
-    primaryForeground: '#fafaf9',
+    primary: '#2563eb',
+    primaryForeground: '#ffffff',
   },
 }
 
 export const LOCALIZATION = {
-  isActive: true,
+  isActive: false,
 }
 
 export const SIDEBAR = {

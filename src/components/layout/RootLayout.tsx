@@ -7,9 +7,15 @@ import { BASE_URL } from '@/lib/config'
 import { BRAND } from '@/lib/starter.config'
 import { ActionCommandProvider } from '@/super-action/command/ActionCommandProvider'
 import type { Metadata } from 'next'
+import { Geist } from 'next/font/google'
 import { SessionProvider } from 'next-auth/react'
 import { ThemeProvider } from 'next-themes'
 import '../../app/globals.css'
+
+const geist = Geist({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 const titlePrefix = isDev() ? '[DEV] ' : ''
 
@@ -33,7 +39,7 @@ export async function RootLayout({
   const localeResolved = locale ?? (await getMyLocale())
   return (
     <html suppressHydrationWarning lang={localeResolved}>
-      <body className="bg-background min-h-[100svh] flex flex-col">
+      <body className={`${geist.className} bg-background min-h-[100svh] flex flex-col`}>
         <LocaleProvider value={localeResolved}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <SessionProvider>{children}</SessionProvider>

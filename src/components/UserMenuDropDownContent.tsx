@@ -12,11 +12,8 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu'
 import { User } from '@/db/schema-zod'
-import { LocaleSwitcher } from '@/i18n/LocaleSwitcher'
-import { getMyLocale } from '@/i18n/getMyLocale'
 import { getTranslations } from '@/i18n/getTranslations'
 import { Locale } from '@/i18n/locale'
-import { LOCALIZATION } from '@/lib/starter.config'
 import { cn } from '@/lib/utils'
 import { ActionButton } from '@/super-action/button/ActionButton'
 import Link from 'next/link'
@@ -35,7 +32,6 @@ export const UserMenuDropDownContent = async ({
     return null
   }
   const t = await getTranslations({ locale })
-  const currentLocale = await getMyLocale({ paramsLocale: locale })
   return (
     <>
       <DropdownMenuLabel className="p-0 font-normal">
@@ -82,11 +78,10 @@ export const UserMenuDropDownContent = async ({
         </DropdownMenuItem>
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
-      <LocaleSwitcher variant="submenu" />
       <ThemeSwitcher variant="submenu" />
       <DropdownMenuSeparator />
       <DropdownMenuItem asChild>
-        <Link href={LOCALIZATION.isActive ? `/${currentLocale}` : '/'}>
+        <Link href="/">
           <House className="size-4" />
           {t.standardWords.homepage}
         </Link>

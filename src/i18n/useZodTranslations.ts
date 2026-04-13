@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import { zodErrorTranslationsDe } from './translations/zodTranslations.de'
-import { zodErrorTranslationsEn } from './translations/zodTranslations.en'
 import { useLocale } from './useLocale'
 
 export const useZodTranslations = () => {
@@ -8,8 +7,6 @@ export const useZodTranslations = () => {
 
   return useMemo(() => {
     switch (locale) {
-      case 'en':
-        return zodErrorTranslationsEn
       case 'de':
         return zodErrorTranslationsDe
       default:

@@ -1,5 +1,5 @@
 {
-  "name": "party-starter",
+  "name": "gutachter-ki",
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.19.0",
@@ -35,6 +35,7 @@
     "neon:dev:help": "tsx src/scripts/neon-dev-branch.ts --help"
   },
   "dependencies": {
+    "@ai-sdk/google-vertex": "^4.0.108",
     "@auth/core": "^0.41.1",
     "@auth/drizzle-adapter": "^1.11.1",
     "@base-ui/react": "^1.1.0",
@@ -45,6 +46,7 @@
     "@react-email/components": "1.0.7",
     "@sodefa/next-server-context": "^0.0.3",
     "@tailwindcss/postcss": "^4.1.18",
+    "ai": "^6.0.158",
     "boring-avatars": "^2.0.4",
     "change-case": "^5.4.4",
     "class-variance-authority": "^0.7.1",

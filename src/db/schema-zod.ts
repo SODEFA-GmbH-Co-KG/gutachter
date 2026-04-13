@@ -56,3 +56,12 @@ export const EmailLogInsert = createInsertSchema(schema.emailLog, {
   status: schema.EmailLogStatus,
 })
 export type EmailLogInsert = z.infer<typeof EmailLogInsert>
+
+export const Generation = createSelectSchema(schema.generations, {
+  status: schema.GenerationStatus,
+})
+export type Generation = z.infer<typeof Generation>
+export const GenerationInsert = createInsertSchema(schema.generations, {
+  status: schema.GenerationStatus,
+})
+export type GenerationInsert = z.infer<typeof GenerationInsert>

@@ -3,7 +3,7 @@ import { Locale, localeDefinitions } from '@/i18n/locale'
 import { keyBy, mapValues, replace } from 'lodash-es'
 import { type Metadata, type ResolvingMetadata } from 'next'
 import { getTranslations } from './getTranslations'
-import { TranslationsServerAndClient } from './translations/translations.server.en'
+import { TranslationsServerAndClient } from './translations/translations.server.de'
 
 // PUT THIS IN LAYOUT
 export const generateMetadataLocalizedLayout = () => {

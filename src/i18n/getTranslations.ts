@@ -6,7 +6,5 @@ export const getTranslations = async ({ locale }: { locale?: Locale } = {}) => {
   switch (resolvedLocale) {
     case 'de':
       return import('./translations/translations.server.de').then((m) => m.t)
-    case 'en':
-      return import('./translations/translations.server.en').then((m) => m.t)
   }
 }

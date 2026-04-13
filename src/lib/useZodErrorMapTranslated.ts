@@ -1,4 +1,4 @@
-import { ZodErrorTranslations } from '@/i18n/translations/zodTranslations.en'
+import { ZodErrorTranslations } from '@/i18n/translations/zodTranslations.de'
 import { z } from 'zod'
 
 function joinValues(

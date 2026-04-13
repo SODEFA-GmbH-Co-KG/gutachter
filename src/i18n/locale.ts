@@ -1,10 +1,10 @@
-import { de, enUS, type Locale as DateFnsLocale } from 'date-fns/locale'
+import { de, type Locale as DateFnsLocale } from 'date-fns/locale'
 import { z } from 'zod'
 
-export const LOCALES = ['en', 'de'] as const
+export const LOCALES = ['de'] as const
 export const Locale = z.enum(LOCALES)
 export type Locale = z.infer<typeof Locale>
-export const DEFAULT_LOCALE: Locale = 'en'
+export const DEFAULT_LOCALE: Locale = 'de'
 export const COOKIE_NAME = 'locale'
 
 export const localeDefinitions: {
@@ -14,13 +14,6 @@ export const localeDefinitions: {
   actionLabel: string
   dateFnsLocale: DateFnsLocale
 }[] = [
-  {
-    locale: 'en',
-    nativeName: 'English',
-    abbreviationLabel: 'EN',
-    actionLabel: 'Change language to English',
-    dateFnsLocale: enUS,
-  },
   {
     locale: 'de',
     nativeName: 'Deutsch',

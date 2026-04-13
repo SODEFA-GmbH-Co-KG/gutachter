@@ -1,6 +1,5 @@
 import { UserButtonSuspense } from '@/auth/UserButton'
 import { getIsLoggedIn } from '@/auth/getMyUser'
-import { LocaleSwitcher } from '@/i18n/LocaleSwitcher'
 import { Locale } from '@/i18n/locale'
 import { Suspense } from 'react'
 import { ThemeSwitcher } from './ThemeSwitcher'
@@ -8,7 +7,6 @@ import { ThemeSwitcher } from './ThemeSwitcher'
 const Fallback = () => {
   return (
     <>
-      <LocaleSwitcher />
       <ThemeSwitcher />
     </>
   )

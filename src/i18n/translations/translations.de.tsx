@@ -1,15 +1,14 @@
-import { TranslationsClient } from './translations.en'
-
 export const t = {
   landing: {
     title: (
       <>
-        Willkommen im Party <b className="text-primary">Starter</b>
+        Immobiliengutachten.{' '}
+        <b className="text-primary">Per KI generiert.</b>
       </>
     ),
   },
   app: {
-    welcome: 'Willkommen in der App',
+    welcome: 'Willkommen bei GutachterKI',
   },
   userManagement: {
     passwordChanged: 'Das Passwort wurde geändert.',
@@ -87,7 +86,7 @@ export const t = {
         </p>
       </>
     ),
-    continueWithDiscord: 'Mit Discord anmelden',
+    continueWithProvider: 'Weiter mit SSO',
     forgotPassword: 'Passwort vergessen?',
     confirmPasswordMismatch: 'Passwörter stimmen nicht überein',
     loginTitle: 'Anmelden',
@@ -316,6 +315,7 @@ export const t = {
     crons: 'Cron Jobs',
     emails: 'E-Mails',
     dashboard: 'Dashboard',
+    generate: 'Gutachten generieren',
   },
   emailsLog: {
     title: 'E-Mails',
@@ -423,4 +423,6 @@ export const t = {
         'Dieser Cron Job ist NICHT aktiv. Sind Sie sicher, dass Sie ihn trotzdem ausführen möchten?',
     },
   },
-} satisfies TranslationsClient
+}
+
+export type TranslationsClient = typeof t
