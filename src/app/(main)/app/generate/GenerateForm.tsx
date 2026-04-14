@@ -8,7 +8,10 @@ import { useCallback, useState } from 'react'
 import { toast } from 'sonner'
 import { CheckboxMatrix } from './CheckboxMatrix'
 import { FileUpload } from './FileUpload'
-import { GenerateFormSchema } from './generation-config'
+import {
+  type CategorizedFiles,
+  GenerateFormSchema,
+} from './generation-config'
 import { ResultDisplay } from './ResultDisplay'
 
 const [useGenerateForm] = createZodForm(GenerateFormSchema)
@@ -25,7 +28,7 @@ export function GenerateForm() {
     },
   })
 
-  const [files, setFiles] = useState<File[]>([])
+  const [categorizedFiles, setCategorizedFiles] = useState<CategorizedFiles>({})
   const [resultText, setResultText] = useState('')
   const [isStreaming, setIsStreaming] = useState(false)
 
@@ -36,9 +39,10 @@ export function GenerateForm() {
       setIsStreaming(true)
       setResultText('')
 
+      const allFiles = Object.values(categorizedFiles).flat()
       const formData = new FormData()
       formData.set('checkboxData', JSON.stringify(data))
-      for (const file of files) {
+      for (const file of allFiles) {
         formData.append('files', file)
       }
 
@@ -91,7 +95,7 @@ export function GenerateForm() {
         setIsStreaming(false)
       }
     },
-    [files],
+    [categorizedFiles],
   )
 
   return (
@@ -102,7 +106,10 @@ export function GenerateForm() {
       >
         <CheckboxMatrix />
 
-        <FileUpload files={files} onChange={setFiles} />
+        <FileUpload
+          categorizedFiles={categorizedFiles}
+          onChange={setCategorizedFiles}
+        />
 
         <Button
           type="submit"

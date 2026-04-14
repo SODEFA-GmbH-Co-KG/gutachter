@@ -2,7 +2,7 @@ import { type ExpirationTime } from '@/organization/inviteCodes/expirationTimes'
 
 export const ORGS = {
   isActive: true,
-  onlyAdminsCanCreateOrgs: false,
+  onlyAdminsCanCreateOrgs: true,
   defaultExpirationEmailInvitation: '1d' satisfies ExpirationTime,
 } as const
 

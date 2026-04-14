@@ -80,7 +80,7 @@ export const GenerateFormSchema = z.object({
 export type GenerateFormData = z.infer<typeof GenerateFormSchema>
 
 export const FILE_CONSTRAINTS = {
-  maxFiles: 10,
+  maxFiles: 20,
   maxFileSizeMB: 10,
   maxFileSizeBytes: 10 * 1024 * 1024,
   acceptedTypes: [
@@ -91,3 +91,50 @@ export const FILE_CONSTRAINTS = {
   ] as const,
   acceptString: '.pdf,.jpg,.jpeg,.png,.heic',
 }
+
+export const DOCUMENT_CATEGORIES = [
+  {
+    id: 'fotos',
+    label: 'Objektfotos',
+    description: 'Aussen- & Innenansichten, Schaeden',
+    acceptTypes: ['image/jpeg', 'image/png', 'image/heic'],
+    acceptString: '.jpg,.jpeg,.png,.heic',
+  },
+  {
+    id: 'grundbuch',
+    label: 'Grundbuchauszug & Lageplan',
+    description: 'Grundbuch, Flurkarte, Katasterplan',
+    acceptTypes: ['application/pdf'],
+    acceptString: '.pdf',
+  },
+  {
+    id: 'plaene',
+    label: 'Bauplaene & Grundrisse',
+    description: 'Grundrisse, Schnitte, Ansichten',
+    acceptTypes: ['application/pdf', 'image/jpeg', 'image/png', 'image/heic'],
+    acceptString: '.pdf,.jpg,.jpeg,.png,.heic',
+  },
+  {
+    id: 'flaeche',
+    label: 'Flaechenberechnung',
+    description: 'Wohn- & Nutzflaechenberechnung',
+    acceptTypes: ['application/pdf'],
+    acceptString: '.pdf',
+  },
+  {
+    id: 'energie',
+    label: 'Energieausweis',
+    description: 'Energiebedarfs- oder Verbrauchsausweis',
+    acceptTypes: ['application/pdf'],
+    acceptString: '.pdf',
+  },
+  {
+    id: 'sonstiges',
+    label: 'Sonstige Unterlagen',
+    description: 'Mietvertraege, Baubeschreibung, weitere Dokumente',
+    acceptTypes: ['application/pdf', 'image/jpeg', 'image/png', 'image/heic'],
+    acceptString: '.pdf,.jpg,.jpeg,.png,.heic',
+  },
+] as const
+
+export type CategorizedFiles = Record<string, File[]>
