@@ -50,7 +50,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     verifyRequest: `/auth/check-mail`,
   },
   providers: [
-    Discord,
+    Discord({ issuer: 'https://discord.com' }),
     Nodemailer({
       from: getEmailFromAddress(),
       server: getEmailServerConfig(),
